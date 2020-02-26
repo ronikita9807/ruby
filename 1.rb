@@ -1,5 +1,5 @@
 class Sample
-  def discriminant
+  def discriminant 
     puts "Please, write coefficient a,b,c"
     coef_a = gets.chomp
     coef_a = coef_a.to_f

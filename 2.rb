@@ -1,25 +1,25 @@
 class Sample
-  def discriminant
-    puts "Please, write coefficient a,b,c"
-    coef_a = gets.chomp
-    coef_a = coef_a.to_f
-    coef_b = gets.chomp
-    coef_b = coef_b.to_f
-    coef_c = gets.chomp
-    coef_c = coef_c.to_f
-    discrim = coef_b*coef_b - 4*coef_a*coef_c
-    puts discrim
-    if discrim < 0
-      puts "Корней нет"
-    elsif discrim == 0
-      puts -coef_b / (2*coef_a)
-    else
-      puts (-coef_b - Math.sqrt(discrim))/(2*coef_a)
-      puts (-coef_b + Math.sqrt(discrim))/(2*coef_a)
+  def store
+    puts "Please, write data"
+    hash= {}
+    hash_price ={}
+    sum=0
+    while true
+      product=gets.chomp
+      if product == "stop"
+        break 
+      end
+      price=Float(gets.chomp)
+      numb=Float(gets.chomp)
+      hash[product] = {price => numb}
+      hash_price[product]=price*numb
+      sum = sum + price*numb
     end
-    
+    puts hash
+    puts hash_price
+    puts sum
   end
 end
 
 s = Sample.new
-s.discriminant
+s.store
